@@ -1,0 +1,11 @@
+any_ptr             LITERAL1
+VoidFunctionVoid    LITERAL1
+VoidFunctionAny     LITERAL1
+
+Callable            KEYWORD1
+invoke              KEYWORD2
+
+VoidCallableVoid    KEYWORD1
+VoidCallableAny     KEYWORD1
+VoidMemberVoid      KEYWORD1
+VoidMemberAny       KEYWORD1

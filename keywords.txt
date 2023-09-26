@@ -5,7 +5,20 @@ VoidFunctionAny     LITERAL1
 Callable            KEYWORD1
 invoke              KEYWORD2
 
-VoidCallableVoid    KEYWORD1
-VoidCallableAny     KEYWORD1
-VoidMemberVoid      KEYWORD1
-VoidMemberAny       KEYWORD1
+VerifiableInvokable KEYWORD1
+valid               KEYWORD2
+code                KEYWORD2
+
+InvokableVerifier   KEYWORD1
+invokable_exists    KEYWORD2
+invokable_verify    KEYWORD2
+invokable_get       KEYWORD2
+
+Invokable           KEYWORD1
+
+Function            KEYWORD1
+getFunction         KEYWORD2
+
+Method              KEYWORD1
+getInstance         KEYWORD2
+getMethod           KEYWORD2

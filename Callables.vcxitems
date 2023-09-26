@@ -16,11 +16,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Callables.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)src\Callables.cpp" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Function.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Invokable.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\InvokableVerifier.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Method.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\VerifiableInvokable.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)library.properties" />
+    <None Include="$(MSBuildThisFileDirectory)LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\InvokableVerifier.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\VerifiableInvokable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)keywords.txt" />
   </ItemGroup>
 </Project>

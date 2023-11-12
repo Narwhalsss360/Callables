@@ -13,11 +13,16 @@ struct Method : public Invokable<ReturnType, Args...>
     {
     }
 
+    /// @brief Invokes
+    /// @param ...args args
+    /// @return 
     ReturnType invoke(Args... args) const override
     {
         return (instance->*method)(args...);
     }
 
+    /// @brief Verifies the instance pointer and the method pointer.
+    /// @return 
     bool valid() const override
     {
         return instance != nullptr && method != nullptr;
@@ -28,16 +33,22 @@ struct Method : public Invokable<ReturnType, Args...>
         return VerifiableCode_Method;
     }
 
+    /// @brief Gets the instance.
+    /// @return `Container` instance
     Container* getInstance() const
     {
         return instance;
     }
 
+    /// @brief Sets the instance.
+    /// @param instance instance
     void setInstance(Container* instance)
     {
         this->instance = instance;
     }
 
+    /// @brief Get the method (bound) function pointer.
+    /// @return `method_t` method
     method_t getMethod() const
     {
         return method;

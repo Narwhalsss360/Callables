@@ -1,24 +1,32 @@
-any_ptr             LITERAL1
-VoidFunctionVoid    LITERAL1
-VoidFunctionAny     LITERAL1
+Callables                   LITERAL1
 
-Callable            KEYWORD1
-invoke              KEYWORD2
+VerifiableCode_Invalid      LITERAL1
+VerifiableCode_Function     LITERAL1
+VerifiableCode_Method       LITERAL1
 
-VerifiableInvokable KEYWORD1
-valid               KEYWORD2
-code                KEYWORD2
+VerifiableInvokable         KEYWORD1
+valid                       KEYWORD2
+code                        KEYWORD2
 
-InvokableVerifier   KEYWORD1
-invokable_exists    KEYWORD2
-invokable_verify    KEYWORD2
-invokable_get       KEYWORD2
+InvokableVerifier           KEYWORD1
+exists                      KEYWORD2
+verify                      KEYWORD2
+get                         KEYWORD2
 
-Invokable           KEYWORD1
+invokable_exists            LITERAL1
+invokable_verify            LITERAL1
+invokable_get               LITERAL1
 
-Function            KEYWORD1
-getFunction         KEYWORD2
+Invokable                   KEYWORD1
+invoke                      KEYWORD2
 
-Method              KEYWORD1
-getInstance         KEYWORD2
-getMethod           KEYWORD2
+Function                    KEYWORD1
+getFunction                 KEYWORD2
+
+Function_Infered            LITERAL1
+
+Method                      KEYWORD1
+getInstance                 KEYWORD2
+getMethod                   KEYWORD2
+
+Method_Infered              LITERAL1

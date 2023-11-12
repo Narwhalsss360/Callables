@@ -7,6 +7,7 @@ constexpr int VerifiableCode_Function = 1;
 constexpr int VerifiableCode_Method = 2;
 #pragma endregion
 
+/// @brief Base class for objects that are invokable
 struct VerifiableInvokable
 {
     VerifiableInvokable();

@@ -11,6 +11,9 @@ struct Invokable : public VerifiableInvokable
     {
     }
 
+    /// @brief Invokes
+    /// @param ...args args
+    /// @return `ReturnType`
     virtual ReturnType invoke(Args... args) const = 0;
 
     ReturnType operator()(Args... args) const

@@ -13,11 +13,16 @@ struct Function : public Invokable<ReturnType, Args...>
     {
     }
 
+    /// @brief Calls the function
+    /// @param ...args args
+    /// @return `ReturnType`
     ReturnType invoke(Args... args) const override
     {
         return function(args...);
     }
 
+    /// @brief Checks if the function pointer is valid.
+    /// @return `bool` true if valid
     bool valid() const override
     {
         return function != nullptr;
@@ -28,6 +33,8 @@ struct Function : public Invokable<ReturnType, Args...>
         return VerifiableCode_Function;
     }
 
+    /// @brief Gets the function pointer.
+    /// @return `function_t` function
     function_t getFunction() const
     {
         return function;

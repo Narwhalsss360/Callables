@@ -6,13 +6,26 @@
 #include "Method.h"
 #include <stdint.h>
 
+/// @brief Used to verify that an invokable to safe to invoke.
 class InvokableVerifier
 {
 public:
-    static bool exists(VerifiableInvokable*);
 
-    static bool verify(VerifiableInvokable*);
+    /// @brief Checks if a pointer to an invokable is still valid.
+    /// @param pointer pointer to invokable
+    /// @return `bool` true if invokable at pointer is valid
+    static bool exists(VerifiableInvokable* pointer);
 
+    /// @brief Checks if pointer is valid and if invokable is safe to invoke.
+    /// @param pointer 
+    /// @return `bool` true if pointer is valud and is safe to invoke
+    static bool verify(VerifiableInvokable* pointer);
+
+    /// @brief Get global invokable for a function.
+    /// @tparam ReturnType Return type of function
+    /// @tparam ...Args Arguments of function
+    /// @param function Pointer to function
+    /// @return `Invokable` of function
     template <typename ReturnType, typename... Args>
     static Invokable<ReturnType, Args...>& get(ReturnType (*function)(Args...))
     {
@@ -39,6 +52,12 @@ public:
         return *found;
     }
 
+    /// @brief Get global invokable for a method.
+    /// @tparam ReturnType Return type of method
+    /// @tparam ...Args Arguments of the method
+    /// @param instance Pointer to instance 
+    /// @param method Pointer to bound function
+    /// @return `Invokable` of bound function
     template <typename Container, typename ReturnType, typename... Args>
     static Invokable<ReturnType, Args...>& get(Container* instance, ReturnType (Container::*method)(Args...))
     {
@@ -82,16 +101,34 @@ private:
 };
 
 #pragma region Global Functions
-bool invokable_exists(VerifiableInvokable*);
 
-bool invokable_verify(VerifiableInvokable*);
+/// @brief Checks if a pointer to an invokable is still valid.
+/// @param pointer pointer to invokable
+/// @return `bool` true if invokable at pointer is valid
+bool invokable_exists(VerifiableInvokable* pointer);
 
+/// @brief Checks if pointer is valid and if invokable is safe to invoke.
+/// @param pointer 
+/// @return `bool` true if pointer is valud and is safe to invoke
+bool invokable_verify(VerifiableInvokable* pointer);
+
+/// @brief Get global invokable for a function.
+/// @tparam ReturnType Return type of function
+/// @tparam ...Args Arguments of function
+/// @param function Pointer to function
+/// @return `Invokable` of function
 template <typename ReturnType, typename... Args>
 Invokable<ReturnType, Args...>& invokable_get(ReturnType (*function)(Args...))
 {
     return InvokableVerifier::get(function);
 }
 
+/// @brief Get global invokable for a method.
+/// @tparam ReturnType Return type of method
+/// @tparam ...Args Arguments of the method
+/// @param instance Pointer to instance 
+/// @param method Pointer to bound function
+/// @return `Invokable` of bound function
 template <typename Container, typename ReturnType, typename... Args>
 Invokable<ReturnType, Args...>& invokable_get(Container* instance, ReturnType (Container::*method)(Args...))
 {

@@ -1,7 +1,5 @@
 #include <Callables.h>
 
-
-
 void printTime() {
     Serial.println(millis());
 }

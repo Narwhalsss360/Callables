@@ -17,8 +17,8 @@ void myFunction() {
 SomeClass instance;
 
 //Both derive from abstract class Invokable. Get these by reference for support for either.
-Function<void> streamReceivedGlobalFunction = invokable_get(myFunction);
-Method<SomeClass, void> streamReceivedSomeClassMethod = invokable_get(&instance, &SomeClass::streamReceived);
+Function<void> streamReceivedGlobalFunction = Function_Infered(myFunction);
+Method<SomeClass, void> streamReceivedSomeClassMethod = Method_Infered(&instance, &SomeClass::streamReceived);
 
 void setup() {
     Serial.begin(BAUDRATE);

@@ -27,6 +27,7 @@ Function_Infered            LITERAL1
 
 Method                      KEYWORD1
 getInstance                 KEYWORD2
+setInstance                 KEYWORD2
 getMethod                   KEYWORD2
 
 Method_Infered              LITERAL1

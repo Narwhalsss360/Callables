@@ -23,14 +23,9 @@ struct Function : public Invokable<ReturnType, Args...>
 
     /// @brief Checks if the function pointer is valid.
     /// @return `bool` true if valid
-    bool valid() const override
+    bool valid() const
     {
         return function != nullptr;
-    }
-
-    virtual const int code() const override
-    {
-        return VerifiableCode_Function;
     }
 
     /// @brief Gets the function pointer.

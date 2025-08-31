@@ -2,7 +2,7 @@
 
 #define BAUDRATE 115200
 
-String transformCharacters(const String& string, Invokable<char, char>& transformer) {
+String transformCharacters(const String& string, const Invokable<char, char>& transformer) {
     String result;
     for (int i = 0; i < string.length(); i++) {
         result += transformer(string[i]);
@@ -33,7 +33,7 @@ void setup() {
     Serial.begin(BAUDRATE);
     String myString = F("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
-    String result = transformCharacters(myString, invokable_get(c_toupper));
+    String result = transformCharacters(myString, Function<char, char>(c_toupper));
     Serial.println(result);
 
     result = transformCharacters(myString, swapCase_Function);

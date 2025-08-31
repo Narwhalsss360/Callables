@@ -1,16 +1,9 @@
 #ifndef Invokable_h
 #define Invokable_h
 
-#include "VerifiableInvokable.h"
-
 template <typename ReturnType, typename... Args>
-struct Invokable : public VerifiableInvokable
+struct Invokable
 {
-    Invokable()
-        : VerifiableInvokable()
-    {
-    }
-
     /// @brief Invokes
     /// @param ...args args
     /// @return `ReturnType`

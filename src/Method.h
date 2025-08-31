@@ -23,16 +23,11 @@ struct Method : public Invokable<ReturnType, Args...>
 
     /// @brief Verifies the instance pointer and the method pointer.
     /// @return 
-    bool valid() const override
+    bool valid() const
     {
         return instance != nullptr && method != nullptr;
     }
-
-    virtual const int code() const override
-    {
-        return VerifiableCode_Method;
-    }
-
+    ///
     /// @brief Gets the instance.
     /// @return `Container` instance
     Container* getInstance() const

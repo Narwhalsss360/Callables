@@ -21,7 +21,7 @@ bool c_islower(char c)
 }
 
 //Chose whether you want to use c_isupper, c_islower or your own predicate that takes in one char
-Predicate<char> predicate = invokable_get(c_isupper);
+Predicate<char> predicate = Predicate<char>(c_isupper);
 
 //Name of predicate, for printing purposes
 String predicateName = "c_isupper"; 

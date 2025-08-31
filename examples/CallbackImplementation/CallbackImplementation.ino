@@ -25,11 +25,8 @@ void setup() {
 }
 
 void loop() {
-    if (Serial.available())
-    {
-        if (invokable_verify(&streamReceivedGlobalFunction))
-            streamReceivedGlobalFunction.invoke();
-        if (invokable_verify(&streamReceivedSomeClassMethod))
-            streamReceivedSomeClassMethod();
+    if (Serial.available()) {
+        streamReceivedGlobalFunction.invoke();
+        streamReceivedSomeClassMethod();
     }
 }
